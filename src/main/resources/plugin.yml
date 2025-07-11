@@ -1,0 +1,31 @@
+name: LinuxAuthenticator
+version: '1.0'
+main: gnu.maseckt.linuxAuthenticator.LinuxAuthenticator
+api-version: '1.16'
+description: 'Плагин для аутентификации игроков на основе вопросов о Linux'
+author: 'maseckt'
+website: 'https://github.com/maseckt/LinuxAuthenticator'
+folia-supported: true
+
+commands:
+  linuxauth:
+    description: 'Команды для управления LinuxAuthenticator'
+    usage: '/linuxauth <reload|reset|info|answer>'
+    permission: 'linuxauthenticator.admin'
+    permission-message: '§cУ вас нет прав для использования этой команды!'
+  answer:
+    description: 'Команда для ответа на вопросы аутентификации'
+    usage: '/answer <ответ>'
+    permission: 'linuxauthenticator.answer'
+    permission-message: '§cУ вас нет прав для использования этой команды!'
+
+permissions:
+  linuxauthenticator.admin:
+    description: 'Доступ к административным командам LinuxAuthenticator'
+    default: op
+  linuxauthenticator.bypass:
+    description: 'Обход аутентификации Linux'
+    default: op
+  linuxauthenticator.answer:
+    description: 'Возможность отвечать на вопросы аутентификации'
+    default: true

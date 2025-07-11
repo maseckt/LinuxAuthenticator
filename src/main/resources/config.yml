@@ -1,0 +1,186 @@
+# LinuxAuthenticator Configuration
+# Plugin for authenticating players based on Linux questions
+
+# Plugin settings
+settings:
+  # Authentication mode: CHOICE (multiple choice) or TEXT (exact answer)
+  mode: "CHOICE"
+  # Number of questions for authentication
+  questions_count: 3
+  # Time to answer in seconds
+  timeout_seconds: 60
+  # Maximum number of errors before kick
+  max_errors: 3
+  # Number of attempts before ban (0 = disabled)
+  max_attempts: 3
+  # Ban duration in minutes when attempts exceeded
+  ban_duration_minutes: 15
+  # Command to execute when attempts exceeded (optional, leave empty to use built-in ban system)
+  ban_command: ""
+  # Authentication only on first login after server restart
+  auth_once_per_session: true
+  # Messages
+  messages:
+    welcome: "§aДобро пожаловать на сервер! §eДля входа ответьте на вопросы о Linux:"
+    correct_answer: "§aПравильно! Следующий вопрос:"
+    wrong_answer: "§cНеправильно! Попробуйте еще раз. Осталось ошибок: %errors%"
+    max_errors_reached: "§cСлишком много ошибок! Вы были кикнуты с сервера."
+    timeout: "§cВремя истекло! Вы были кикнуты с сервера."
+    success: "§aПоздравляем! Вы успешно прошли аутентификацию!"
+    kick_message: "§cВы не смогли пройти аутентификацию Linux. Попробуйте еще раз!"
+    ban_message: "§cВы забанены на %duration% минут за слишком много неудачных попыток аутентификации."
+
+# Universal questions (work in both modes)
+# In CHOICE mode options are used, in TEXT mode they are ignored
+questions:
+  - question: "Какой пакетный менеджер используется в Arch Linux?"
+    answer: "pacman"
+    options:
+      - "apt"
+      - "pacman"
+      - "yum"
+      - "dnf"
+  
+  - question: "Какой пакетный менеджер используется в Ubuntu/Debian?"
+    answer: "apt"
+    options:
+      - "pacman"
+      - "apt"
+      - "yum"
+      - "zypper"
+  
+  - question: "Какая команда используется для просмотра содержимого директории в Linux?"
+    answer: "ls"
+    options:
+      - "dir"
+      - "ls"
+      - "list"
+      - "show"
+  
+  - question: "Какой файл содержит информацию о загруженных модулях ядра?"
+    answer: "/proc/modules"
+    options:
+      - "/etc/modules"
+      - "/proc/modules"
+      - "/sys/modules"
+      - "/var/modules"
+  
+  - question: "Какая команда используется для изменения прав доступа к файлу?"
+    answer: "chmod"
+    options:
+      - "chown"
+      - "chmod"
+      - "chattr"
+      - "chgrp"
+  
+  - question: "Какой пакетный менеджер используется в Fedora?"
+    answer: "dnf"
+    options:
+      - "apt"
+      - "pacman"
+      - "dnf"
+      - "zypper"
+  
+  - question: "Какая команда используется для поиска файлов в Linux?"
+    answer: "find"
+    options:
+      - "search"
+      - "find"
+      - "locate"
+      - "grep"
+  
+  - question: "Какой пакетный менеджер используется в openSUSE?"
+    answer: "zypper"
+    options:
+      - "apt"
+      - "pacman"
+      - "dnf"
+      - "zypper"
+  
+  - question: "Какая команда используется для просмотра процессов в Linux?"
+    answer: "ps"
+    options:
+      - "process"
+      - "ps"
+      - "top"
+      - "htop"
+  
+  - question: "Какой файл содержит информацию о загруженности системы?"
+    answer: "/proc/loadavg"
+    options:
+      - "/proc/cpuinfo"
+      - "/proc/meminfo"
+      - "/proc/loadavg"
+      - "/proc/uptime"
+  
+  - question: "Какая команда используется для создания директории в Linux?"
+    answer: "mkdir"
+    options:
+      - "makedir"
+      - "mkdir"
+      - "create"
+      - "newdir"
+  
+  - question: "Какой файл содержит информацию о CPU?"
+    answer: "/proc/cpuinfo"
+    options:
+      - "/proc/cpu"
+      - "/proc/cpuinfo"
+      - "/sys/cpu"
+      - "/var/cpu"
+  
+  - question: "Какая команда используется для удаления файлов в Linux?"
+    answer: "rm"
+    options:
+      - "delete"
+      - "rm"
+      - "del"
+      - "remove"
+  
+  - question: "Какой пакетный менеджер используется в Gentoo?"
+    answer: "emerge"
+    options:
+      - "portage"
+      - "emerge"
+      - "gentoo"
+      - "pkg"
+  
+  - question: "Какая команда используется для копирования файлов в Linux?"
+    answer: "cp"
+    options:
+      - "copy"
+      - "cp"
+      - "clone"
+      - "dup"
+  
+  - question: "Какая команда используется для переименования файлов в Linux?"
+    answer: "mv"
+    options:
+      - "rename"
+      - "mv"
+      - "move"
+      - "change"
+  
+  - question: "Какой файл содержит информацию о памяти?"
+    answer: "/proc/meminfo"
+    options:
+      - "/proc/memory"
+      - "/proc/meminfo"
+      - "/sys/memory"
+      - "/var/memory"
+  
+  - question: "Какая команда используется для просмотра содержимого файла?"
+    answer: "cat"
+    options:
+      - "view"
+      - "cat"
+      - "show"
+      - "display"
+  
+  - question: "Какой пакетный менеджер используется в Alpine Linux?"
+    answer: "apk"
+    options:
+      - "alpine"
+      - "apk"
+      - "pkg"
+      - "apt" 
