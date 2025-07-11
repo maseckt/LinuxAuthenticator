@@ -17,7 +17,7 @@ A plugin for Minecraft servers based on Paper that authenticates players using L
 - **Once-per-session authentication** – no need to re-authenticate on every reconnect
 - **Admin commands** to control the plugin
 - **Permission system** for skipping authentication
-- **Supports Paper and Folia 1.18-1.21.7**
+- **Supports Paper and Folia 1.21-1.21.7**
 
 ## Installation
 
@@ -129,7 +129,7 @@ questions:
 
 ## Compatibility
 
-* **Paper/Spigot:** 1.18 – 1.21.7
+* **Paper/Spigot:** 1.21-1.21.7
 * **Folia:** Supported
 * **Java:** 21+
 
